@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #change motd
 cat << EOF > /etc/motd
 ______ _____ _____ _____   _   _                 _ _          _ _
