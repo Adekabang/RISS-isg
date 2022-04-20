@@ -24,7 +24,7 @@ sed -i '' -e "s|.join('<br/>')|[0]|" /usr/local/www/widgets/widgets/system_infor
 sed -i '' -e 's|"product_copyright_owner":.*|"product_copyright_owner": "Tech\&Solution",|' -e 's|"product_copyright_url":.*|"product_copyright_url": "https://r17.co.id/",|' -e 's|"product_copyright_years":.*|"product_copyright_years": "2022",|' -e 's|"product_email":.*|"product_email": "support@r17.co.id",|' -e 's|"product_name":.*|"product_name": "RISS",|' -e 's|"product_website":.*|"product_website": "https://r17.co.id/"|' /usr/local/opnsense/version/core
 
 #install package and themes
-sed -i '' -e 's|enabled: no|enabled: yes|' /usr/local/etc/pkg/repos/FreeBSD.conf ; pkg update ; pkg install -y ccze dialog4ports iperf lynx trafshow htop tcpproxy vim nano wget json-c bind-tools screen nmap os-net-snmp os-iperf os-theme-cicada os-theme-vicuna; sed -i '' -e 's|enabled: yes|enabled: no|' /usr/local/etc/pkg/repos/FreeBSD.conf ; pkg update;pkg autoremove -y
+sed -i '' -e 's|enabled: no|enabled: yes|' /usr/local/etc/pkg/repos/FreeBSD.conf ; pkg update ; pkg install -y ccze dialog4ports iperf lynx trafshow htop tcpproxy vim nano wget json-c bind-tools screen nmap os-net-snmp os-iperf os-theme-cicada os-theme-vicuna os-theme-rebellion	os-theme-tukan; sed -i '' -e 's|enabled: yes|enabled: no|' /usr/local/etc/pkg/repos/FreeBSD.conf ; pkg update;pkg autoremove -y
 
 cp -R betax /usr/local/opnsense/www/themes/
 
@@ -32,20 +32,36 @@ cp -R betax /usr/local/opnsense/www/themes/
 cp Menu/Menu.xml -O /usr/local/opnsense/mvc/app/models/OPNsense/Core/Menu/Menu.xml
 
 #change logo
+rm /usr/local/opnsense/www/themes/vicuna/build/images/default-logo.png
+rm /usr/local/opnsense/www/themes/vicuna/build/images/icon-logo.png 
 cp images/default-logo.svg -O /usr/local/opnsense/www/themes/vicuna/build/images/default-logo.svg ; 
 cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/vicuna/build/images/icon-logo.svg ; 
 cp images/favicon.png -O /usr/local/opnsense/www/themes/vicuna/build/images/favicon.png ; 
-sed -i '' -e 's/D77610/FF9900/g' /usr/local/opnsense/www/themes/vicuna/build/css/main.css
+# sed -i '' -e 's/D77610/FF9900/g' /usr/local/opnsense/www/themes/vicuna/build/css/main.css
 
+rm /usr/local/opnsense/www/themes/cicada/build/images/default-logo.png
+rm /usr/local/opnsense/www/themes/cicada/build/images/icon-logo.png 
 cp images/default-logo.svg -O /usr/local/opnsense/www/themes/cicada/build/images/default-logo.svg ; 
 cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/cicada/build/images/icon-logo.svg ; 
 cp images/favicon.png -O /usr/local/opnsense/www/themes/cicada/build/images/favicon.png ; 
-sed -i '' -e 's/dd630d/FF9900/g' /usr/local/opnsense/www/themes/cicada/build/css/main.css
+# sed -i '' -e 's/dd630d/FF9900/g' /usr/local/opnsense/www/themes/cicada/build/css/main.css
+
+rm /usr/local/opnsense/www/themes/rebellion/build/images/default-logo.png
+rm /usr/local/opnsense/www/themes/rebellion/build/images/icon-logo.png 
+cp images/default-logo.svg -O /usr/local/opnsense/www/themes/rebellion/build/images/default-logo.svg ; 
+cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/rebellion/build/images/icon-logo.svg ; 
+cp images/favicon.png -O /usr/local/opnsense/www/themes/rebellion/build/images/favicon.png ; 
+
+rm /usr/local/opnsense/www/themes/tukan/build/images/default-logo.png
+rm /usr/local/opnsense/www/themes/tukan/build/images/icon-logo.png 
+cp images/default-logo.svg -O /usr/local/opnsense/www/themes/tukan/build/images/default-logo.svg ; 
+cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/tukan/build/images/icon-logo.svg ; 
+cp images/favicon.png -O /usr/local/opnsense/www/themes/tukan/build/images/favicon.png ; 
 
 cp images/default-logo.svg -O /usr/local/opnsense/www/themes/opnsense/build/images/default-logo.svg ; 
 cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/opnsense/build/images/icon-logo.svg ; 
 cp images/favicon.png -O /usr/local/opnsense/www/themes/opnsense/build/images/favicon.png ; 
-sed -i '' -e 's/EA7105/AB2B28/g' -e 's/D94F00/AB2B28/g' /usr/local/opnsense/www/themes/opnsense/build/css/main.css
+# sed -i '' -e 's/EA7105/AB2B28/g' -e 's/D94F00/AB2B28/g' /usr/local/opnsense/www/themes/opnsense/build/css/main.css
 
 #change boot logo
 cat << EOF > /boot/brand-opnsense.4th
