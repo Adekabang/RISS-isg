@@ -1,7 +1,7 @@
 ## Installation
 
 ```sh
-pkg install git bash
+pkg install git bash vim
 git clone https://github.com/Adekabang/RISS-isg.git
 cd RISS-isg
 ```
