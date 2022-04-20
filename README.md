@@ -1,7 +1,7 @@
 ## Installation
 
 ```sh
-pkg install git
+pkg install git bash
 git clone https://github.com/Adekabang/RISS-isg.git
 cd RISS-isg
 ```
