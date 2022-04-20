@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 #change motd
 cat << EOF > /etc/motd
-______ _____ _____ _____   _   _                 _ _          _ _
-| ___ \_   _/  ___/  ___| | | | |               | | |        | | |
-| |_/ / | | \ `--.\ `--.  | |_| | __ _ _ __   __| | | ___  __| | |
-|    /  | |  `--. \`--. \ |  _  |/ _` | '_ \ / _` | |/ _ \/ _` | |
-| |\ \ _| |_/\__/ /\__/ / | | | | (_| | | | | (_| | |  __/ (_| |_|
-\_| \_|\___/\____/\____/  \_| |_/\__,_|_| |_|\__,_|_|\___|\__,_(_)
+    ____  ______________    __  _____    _   ______  __    __________  __
+   / __ \/  _/ ___/ ___/   / / / /   |  / | / / __ \/ /   / ____/ __ \/ /
+  / /_/ // / \__ \\__ \   / /_/ / /| | /  |/ / / / / /   / __/ / / / / / 
+ / _, _// / ___/ /__/ /  / __  / ___ |/ /|  / /_/ / /___/ /___/ /_/ /_/  
+/_/ |_/___//____/____/  /_/ /_/_/  |_/_/ |_/_____/_____/_____/_____(_)   
+                                                                         
 EOF
 
 cat << EOF > /usr/local/opnsense/service/templates/OPNsense/Auth/motd
-______ _____ _____ _____   _   _                 _ _          _ _
-| ___ \_   _/  ___/  ___| | | | |               | | |        | | |
-| |_/ / | | \ `--.\ `--.  | |_| | __ _ _ __   __| | | ___  __| | |
-|    /  | |  `--. \`--. \ |  _  |/ _` | '_ \ / _` | |/ _ \/ _` | |
-| |\ \ _| |_/\__/ /\__/ / | | | | (_| | | | | (_| | |  __/ (_| |_|
-\_| \_|\___/\____/\____/  \_| |_/\__,_|_| |_|\__,_|_|\___|\__,_(_)
+    ____  ______________    __  _____    _   ______  __    __________  __
+   / __ \/  _/ ___/ ___/   / / / /   |  / | / / __ \/ /   / ____/ __ \/ /
+  / /_/ // / \__ \\__ \   / /_/ / /| | /  |/ / / / / /   / __/ / / / / / 
+ / _, _// / ___/ /__/ /  / __  / ___ |/ /|  / /_/ / /___/ /___/ /_/ /_/  
+/_/ |_/___//____/____/  /_/ /_/_/  |_/_/ |_/_____/_____/_____/_____(_)   
+                                                                         
 EOF
 
 #remove other version except RISS
@@ -29,38 +29,38 @@ sed -i '' -e 's|enabled: no|enabled: yes|' /usr/local/etc/pkg/repos/FreeBSD.conf
 cp -R betax /usr/local/opnsense/www/themes/
 
 #change layout menu
-cp Menu/Menu.xml -O /usr/local/opnsense/mvc/app/models/OPNsense/Core/Menu/Menu.xml
+cp Menu/Menu.xml /usr/local/opnsense/mvc/app/models/OPNsense/Core/Menu/Menu.xml
 
 #change logo
 rm /usr/local/opnsense/www/themes/vicuna/build/images/default-logo.png
 rm /usr/local/opnsense/www/themes/vicuna/build/images/icon-logo.png 
-cp images/default-logo.svg -O /usr/local/opnsense/www/themes/vicuna/build/images/default-logo.svg ; 
-cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/vicuna/build/images/icon-logo.svg ; 
-cp images/favicon.png -O /usr/local/opnsense/www/themes/vicuna/build/images/favicon.png ; 
+cp images/default-logo.svg /usr/local/opnsense/www/themes/vicuna/build/images/default-logo.svg ; 
+cp images/icon-logo.svg /usr/local/opnsense/www/themes/vicuna/build/images/icon-logo.svg ; 
+cp images/favicon.png /usr/local/opnsense/www/themes/vicuna/build/images/favicon.png ; 
 # sed -i '' -e 's/D77610/FF9900/g' /usr/local/opnsense/www/themes/vicuna/build/css/main.css
 
 rm /usr/local/opnsense/www/themes/cicada/build/images/default-logo.png
 rm /usr/local/opnsense/www/themes/cicada/build/images/icon-logo.png 
-cp images/default-logo.svg -O /usr/local/opnsense/www/themes/cicada/build/images/default-logo.svg ; 
-cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/cicada/build/images/icon-logo.svg ; 
-cp images/favicon.png -O /usr/local/opnsense/www/themes/cicada/build/images/favicon.png ; 
+cp images/default-logo.svg /usr/local/opnsense/www/themes/cicada/build/images/default-logo.svg ; 
+cp images/icon-logo.svg /usr/local/opnsense/www/themes/cicada/build/images/icon-logo.svg ; 
+cp images/favicon.png /usr/local/opnsense/www/themes/cicada/build/images/favicon.png ; 
 # sed -i '' -e 's/dd630d/FF9900/g' /usr/local/opnsense/www/themes/cicada/build/css/main.css
 
 rm /usr/local/opnsense/www/themes/rebellion/build/images/default-logo.png
 rm /usr/local/opnsense/www/themes/rebellion/build/images/icon-logo.png 
-cp images/default-logo.svg -O /usr/local/opnsense/www/themes/rebellion/build/images/default-logo.svg ; 
-cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/rebellion/build/images/icon-logo.svg ; 
-cp images/favicon.png -O /usr/local/opnsense/www/themes/rebellion/build/images/favicon.png ; 
+cp images/default-logo.svg /usr/local/opnsense/www/themes/rebellion/build/images/default-logo.svg ; 
+cp images/icon-logo.svg /usr/local/opnsense/www/themes/rebellion/build/images/icon-logo.svg ; 
+cp images/favicon.png /usr/local/opnsense/www/themes/rebellion/build/images/favicon.png ; 
 
 rm /usr/local/opnsense/www/themes/tukan/build/images/default-logo.png
 rm /usr/local/opnsense/www/themes/tukan/build/images/icon-logo.png 
-cp images/default-logo.svg -O /usr/local/opnsense/www/themes/tukan/build/images/default-logo.svg ; 
-cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/tukan/build/images/icon-logo.svg ; 
-cp images/favicon.png -O /usr/local/opnsense/www/themes/tukan/build/images/favicon.png ; 
+cp images/default-logo.svg /usr/local/opnsense/www/themes/tukan/build/images/default-logo.svg ; 
+cp images/icon-logo.svg /usr/local/opnsense/www/themes/tukan/build/images/icon-logo.svg ; 
+cp images/favicon.png /usr/local/opnsense/www/themes/tukan/build/images/favicon.png ; 
 
-cp images/default-logo.svg -O /usr/local/opnsense/www/themes/opnsense/build/images/default-logo.svg ; 
-cp images/icon-logo.svg -O /usr/local/opnsense/www/themes/opnsense/build/images/icon-logo.svg ; 
-cp images/favicon.png -O /usr/local/opnsense/www/themes/opnsense/build/images/favicon.png ; 
+cp images/default-logo.svg /usr/local/opnsense/www/themes/opnsense/build/images/default-logo.svg ; 
+cp images/icon-logo.svg /usr/local/opnsense/www/themes/opnsense/build/images/icon-logo.svg ; 
+cp images/favicon.png /usr/local/opnsense/www/themes/opnsense/build/images/favicon.png ; 
 # sed -i '' -e 's/EA7105/AB2B28/g' -e 's/D94F00/AB2B28/g' /usr/local/opnsense/www/themes/opnsense/build/css/main.css
 
 #change boot logo
@@ -168,10 +168,9 @@ cat << EOF > /boot/logo-hourglass.4th
         s"          :=######+          " logo+
         s"             .-+##           #[m" logo+
         s"  #[m                                " logo+
-        s"  21.1  ``Marvelous Meerkat''     #[m" logo+
+        s"  22.1  ``Observant Owl''     #[m" logo+
 
         2drop
 ;
 EOF
 
-rm -rf RISS-isg
